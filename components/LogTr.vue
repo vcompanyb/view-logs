@@ -1,12 +1,14 @@
 <template>
   <tr>
-    <td><input type="text" v-model="localLog.date" /></td>
-    <td><input type="text" v-model="localLog.action" /></td>
-    <td><input type="text" v-model="localLog.user" /></td>
+    <td><VTextField label="Fecha" v-model="localLog.date"></VTextField></td>
+    <td><VTextField label="Accion" v-model="localLog.action"></VTextField></td>
+    <td><VTextField label="Usuario" v-model="localLog.user"></VTextField></td>
     <td>
-      <button v-show="shouldShowSaveButton" @click="save">SAVE</button>
-      <button v-show="shouldShowSaveButton" @click="discard">DISCARD</button>
-      <button @click="remove(localLog)">DELETE</button>
+      <MyButton v-show="shouldShowSaveButton" @click="save">SAVE</MyButton>
+      <MyButton v-show="shouldShowSaveButton" @click="discard">
+        DISCARD
+      </MyButton>
+      <MyButton @click="remove(localLog)">DELETE</MyButton>
     </td>
   </tr>
 </template>
